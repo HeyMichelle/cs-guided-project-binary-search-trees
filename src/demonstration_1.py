@@ -24,6 +24,35 @@ class BinaryTreeNode:
         self.left = left
         self.right = right
 
-def maxDepth(self, root):
-    # Your code here
+    def maxDepth(self):
+        right_height = 0
+        left_height = 0
 
+        if self.right:
+            right_height = self.maxDepth()
+
+        if self.left:
+            left_height = self.maxDepth(t)
+                #1              #1              #0
+        largest_height = max(right_height, left_height)
+
+        return 1 + largest_height # this will do recursion to the right again
+        # does not work if maybe left > right where 5 > 7
+        # if there are children, find out what their depth is first - recursion
+
+
+        # this says how long is your right side
+        # now you must search the left side. Which is longer?
+        # to find a max depth you need to find the longest path from root to furthest leaf node ( none x 2)
+        # choose the longest one
+
+
+# # Plan
+#     # if it was 1, then there should be = 1
+#       ? self = 1?
+#   
+#             5
+#            /  \
+#         None    7 (max depth)
+#     # if no left or right, return 1
+#     # there is theoretically max depth on node 7 (no trees/nodes at end)
